@@ -1,0 +1,18 @@
+services:
+  postgres:
+    image: postgres:17.6-bookworm
+    environment:
+      POSTGRES_DB: investigator
+      POSTGRES_USER: investigator
+      POSTGRES_PASSWORD: local-demo-only
+    ports:
+      - "127.0.0.1:55432:5432"
+    volumes:
+      - investigation-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U investigator -d investigator"]
+      interval: 2s
+      timeout: 2s
+      retries: 15
+volumes:
+  investigation-data:

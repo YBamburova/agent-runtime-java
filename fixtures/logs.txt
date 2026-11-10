@@ -1,0 +1,2 @@
+2026-01-15T10:00:00Z checkout v41 error_rate=0.2% payment_timeout_ms=2000
+2026-01-15T10:05:00Z checkout v42 error_rate=8.1% reason=payment_timeout payment_latency_p99_ms=850
